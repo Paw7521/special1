@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Surprise</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff5f6d,#ffc371);
+}
+
+.heart-btn{
+    width:170px;
+    height:170px;
+    border:none;
+    cursor:pointer;
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+    background:#ff1744;
+    position:relative;
+    transform:rotate(-45deg);
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.heart-btn:before,
+.heart-btn:after{
+    content:"";
+    width:170px;
+    height:170px;
+    background:#ff1744;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart-btn:before{
+    top:-85px;
+    left:0;
+}
+
+.heart-btn:after{
+    left:85px;
+    top:0;
+}
+
+.heart-btn span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    z-index:10;
+}
+
+.heart-btn:hover{
+    transform:rotate(-45deg) scale(1.08);
+}
+</style>
+
+</head>
+<body>
+
+<button class="heart-btn" onclick="openSong()">
+    <span>❤️<br>दबाओ</span>
+</button>
+
+<script>
+function openSong(){
+    window.location.href="song.html";
+}
+</script>
+
+</body>
+</html>
