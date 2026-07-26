@@ -1,1 +1,171 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️ Surprise</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff5f6d,#ffc371);
+    overflow:hidden;
+}
+
+/* Heart Button */
+.heart-btn{
+    width:170px;
+    height:170px;
+    border:none;
+    cursor:pointer;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+    background:#ff1744;
+    position:relative;
+    transform:rotate(-45deg);
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.heart-btn:before,
+.heart-btn:after{
+    content:"";
+    width:170px;
+    height:170px;
+    background:#ff1744;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart-btn:before{
+    top:-85px;
+    left:0;
+}
+
+.heart-btn:after{
+    left:85px;
+    top:0;
+}
+
+.heart-btn span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    z-index:10;
+    width:150px;
+}
+
+.heart-btn:hover{
+    transform:rotate(-45deg) scale(1.1);
+}
+
+/* Second Screen */
+#screen{
+    display:none;
+    height:100vh;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+}
+
+#screen h1{
+    font-size:45px;
+    margin-bottom:40px;
+}
+
+#screen p{
+    font-size:25px;
+    line-height:1.5;
+    padding:20px;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+    border:6px solid white;
+    border-top:6px solid transparent;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:30px;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="heart-btn" onclick="openSurprise()">
+<span>
+❤️
+<br>
+दबाओ
+</span>
+</button>
+
+<div id="screen">
+<div class="loader"></div>
+
+<h1>
+Wait Only 10 Seconds ❤️
+</h1>
+
+<p>
+Pair na hil jaye to batana 😄
+<br><br>
+Khair tum kaha bataogi Mujhey...
+<br>
+ chhodo fir.......ab chala nahane manjan karne 😂
+    <br><br> No need of any credit sympathy because i make it only for you and know this thing also it is audible for family...... koi dikkat nahi hogi family ke sath bajane mein 😂
+    <br> kabhi kabhi mai apni hi art par hil jata hu aaj to bilkul hila hu.....baki tumko kaysa bhi lagey koi dikkat nahi 😂<br> 
+</p>
+</div>
+
+<!-- Audio file matched with your GitHub repo -->
+<audio id="song" src="SeemaYadav.mp3" preload="auto"></audio>
+
+<script>
+function openSurprise(){
+    // music start
+    let audio = document.getElementById("song");
+    
+    audio.play().catch(function(error) {
+        console.log("Audio play error: ", error);
+    });
+
+    // hide heart
+    document.querySelector(".heart-btn").style.display = "none";
+
+    // show second page
+    document.getElementById("screen").style.display = "flex";
+}
+</script>
+
+</body>
+</html>
